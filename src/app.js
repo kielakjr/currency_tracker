@@ -11,3 +11,9 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Serwer działa na porcie ${PORT}`);
 });
+
+const { connectDB, client } = require('./config/db');
+
+connectDB();
+
+
