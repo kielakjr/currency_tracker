@@ -13,9 +13,13 @@ const sequelize = new Sequelize({
 const connectDB = async () => {
   try {
     await sequelize.authenticate();
-    console.log('Połączono z PostgreSQL');
+    console.log('Connected with PostgreSQL');
+
+    await sequelize.sync({ alter: true });
+    console.log('Models\'s synchronization is finished');
+
   } catch (err) {
-    console.error('Błąd połączenia', err);
+    console.error('Connection error', err);
   }
 };
 

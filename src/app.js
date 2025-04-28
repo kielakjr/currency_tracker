@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Serwer działa na porcie ${PORT}`);
+  console.log(`Server is on port ${PORT}`);
 });
 
 const { connectDB, client } = require('./config/db');
