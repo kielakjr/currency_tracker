@@ -1,19 +1,17 @@
-const express = require('express');
-const app = express();
-const PORT = process.env.PORT || 3000;
+import { ApolloServer } from '@apollo/server'
+import { startStandaloneServer } from '@apollo/server/standalone'
+import { typeDefs, resolvers } from './graphql/schema.js';
+import { connectDB } from './config/db.js';
 
-app.use(express.json());
-
-app.get('/', (req, res) => {
-  res.send('Currency Tracker works!');
-});
-
-app.listen(PORT, () => {
-  console.log(`Server is on port ${PORT}`);
-});
-
-const { connectDB, client } = require('./config/db');
+const server = new ApolloServer({
+  typeDefs,
+  resolvers
+})
 
 connectDB();
+
+const { url } = await startStandaloneServer(server, {
+  listen: { port: 4000 }
+})
 
 

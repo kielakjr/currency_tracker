@@ -1,7 +1,7 @@
-const { DataTypes } = require('sequelize');
-const { sequelize } = require('../config/db');
+import { DataTypes } from 'sequelize';
+import { sequelize } from '../config/db.js';
 
-const Currency = sequelize.define('Currency', {
+export const Currency = sequelize.define('Currency', {
   id: {
     type: DataTypes.UUID,
     defaultValue: DataTypes.UUIDV4,
@@ -23,5 +23,3 @@ const Currency = sequelize.define('Currency', {
 }, {
   timestamps: true,
 });
-
-module.exports = Currency;

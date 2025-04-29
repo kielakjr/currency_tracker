@@ -2,7 +2,8 @@
   "name": "currency_tracker",
   "version": "1.0.0",
   "description": "Backend project",
-  "main": "index.js",
+  "type": "module",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/kielakjr/currency_tracker#readme",
   "dependencies": {
+    "@apollo/server": "^4.12.0",
     "axios": "^1.9.0",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",

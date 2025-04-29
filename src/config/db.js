@@ -1,7 +1,7 @@
-require('dotenv').config();
-const { Sequelize } = require('sequelize');
+import 'dotenv/config';
+import { Sequelize } from 'sequelize';
 
-const sequelize = new Sequelize({
+export const sequelize = new Sequelize({
   username: process.env.DB_USER,
   host: process.env.DB_HOST,
   database: process.env.DB_NAME,
@@ -10,7 +10,7 @@ const sequelize = new Sequelize({
   dialect: 'postgres',
 });
 
-const connectDB = async () => {
+export const connectDB = async () => {
   try {
     await sequelize.authenticate();
     console.log('Connected with PostgreSQL');
@@ -22,5 +22,3 @@ const connectDB = async () => {
     console.error('Connection error', err);
   }
 };
-
-module.exports = { sequelize, connectDB };
