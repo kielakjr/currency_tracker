@@ -12,6 +12,7 @@ export const typeDefs = `#graphql
   }
   type Mutation {
     addCurrency(currency: AddCurrencyInput!): Currency
+    deleteCurrency(id: ID!): Currency
   }
   input AddCurrencyInput {
     name: String!,

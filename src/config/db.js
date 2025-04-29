@@ -34,3 +34,11 @@ export const addCurrencyDB = async (currencyData) => {
     throw error;
   }
 };
+
+export const deleteCurrencyDB = async (id) => {
+  const currency = await Currency.findByPk(id);
+  if (!currency) return null;
+
+  await currency.destroy();
+  return currency;
+};
