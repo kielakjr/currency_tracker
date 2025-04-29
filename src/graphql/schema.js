@@ -9,4 +9,12 @@ export const typeDefs = `#graphql
   }
   type Query {
     currencies: [Currency]
+  }
+  type Mutation {
+    addCurrency(currency: AddCurrencyInput!): Currency
+  }
+  input AddCurrencyInput {
+    name: String!,
+    code: String!,
+    rate: Float!
   }`
