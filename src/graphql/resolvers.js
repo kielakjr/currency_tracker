@@ -18,7 +18,7 @@ export const resolvers = {
             try {
               const currency = await deleteCurrencyDB(id);
               if (!currency) {
-                throw new Error("Currency not found");
+                throw new Error(`Currency not found id ${id}`);
               }
               return currency;
             } catch (err) {
