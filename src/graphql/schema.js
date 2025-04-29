@@ -9,12 +9,4 @@ export const typeDefs = `#graphql
   }
   type Query {
     currencies: [Currency]
-  }
-`
-export const resolvers = {
-    Query: {
-      currencies() {
-        return Currency.findAll()
-      }
-    }
-  }
+  }`
